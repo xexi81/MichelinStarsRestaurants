@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "185727132297",
+    "project_id": "michelin-star-restaurants",
+    "storage_bucket": "michelin-star-restaurants.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185727132297:android:74648a07d8710c58cb5c58",
+        "android_client_info": {
+          "package_name": "com.los3molineros.michelinstarrestaurants"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185727132297-r29lid6ipvaju5aq3mfm1iiu6hba6qn1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.los3molineros.michelinstarrestaurants",
+            "certificate_hash": "dd6e5df70de4e2286e8ea31a721e613582932cea"
+          }
+        },
+        {
+          "client_id": "185727132297-8r7l2dc4e15jbl9ck5sdbm2vccri934o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHZAlIWqzyXeK540DYHjbnOlmB8wRplpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185727132297-8r7l2dc4e15jbl9ck5sdbm2vccri934o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

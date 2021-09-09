@@ -1,0 +1,24 @@
+<resources>
+    <!--
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=DD:6E:5D:F7:0D:E4:E2:28:6E:8E:A3:1A:72:1E:61:35:82:93:2C:EA%3Bcom.los3molineros.michelinstarrestaurants.ui
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.los3molineros.michelinstarrestaurants.ui
+
+    SHA-1 certificate fingerprint:
+    DD:6E:5D:F7:0D:E4:E2:28:6E:8E:A3:1A:72:1E:61:35:82:93:2C:EA
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBvkbMVrTevmqyc0KOcxXXJstrJe_CF1SA</string>
+</resources>

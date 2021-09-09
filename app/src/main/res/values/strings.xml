@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">MichelinStarRestaurants</string>
+    <string name="app_name">Michelin Star Restaurants</string>
+    <string name="stars">Stars</string>
+    <string name="star_1">1 Star</string>
+    <string name="star_2">2 Stars</string>
+    <string name="star_3">3 Stars</string>
+    <string name="star_all">Show all</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
