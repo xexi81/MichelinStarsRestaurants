@@ -17,6 +17,9 @@ interface RestaurantDao {
     @Query("SELECT * FROM RestaurantEntity WHERE rating = :rating")
     suspend fun getRestaurantByRating(rating: String): List<RestaurantEntity>
 
+    @Query("SELECT * FROM RestaurantEntity WHERE name = :name")
+    suspend fun getRestaurantByName(name: String): RestaurantEntity
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveRestaurant(restaurant: RestaurantEntity)
 }

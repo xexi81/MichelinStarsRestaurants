@@ -1,5 +1,7 @@
 package com.los3molineros.michelinstarrestaurants.common
 
+import android.content.Context
+import android.graphics.Typeface
 import android.util.Log
 import com.los3molineros.michelinstarrestaurants.common.AppConstants.TAG_LOG
 import kotlinx.coroutines.coroutineScope
@@ -22,5 +24,13 @@ object CommonFunctions {
         } catch (e: Exception) {
             false
         }
+    }
+
+    fun returnTypefaceKimbalt(context: Context): Typeface {
+        return  Typeface.createFromAsset(context.assets, "fonts/kimbalt_.ttf")
+    }
+
+    fun returnTypefaceKingthings(context: Context): Typeface {
+        return Typeface.createFromAsset(context.assets, "fonts/Kingthings Serifique.ttf")
     }
 }

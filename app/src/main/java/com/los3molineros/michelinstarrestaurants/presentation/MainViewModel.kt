@@ -1,5 +1,6 @@
 package com.los3molineros.michelinstarrestaurants.presentation
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
@@ -18,6 +19,24 @@ class MainViewModel(private val repo: RestaurantRepository): ViewModel() {
         } catch (e: Exception) {
             emit(Resource.Failure(e))
         }
+    }
+
+    fun showAppDialog(context: Context) = liveData(Dispatchers.IO) {
+        emit(Resource.Loading())
+
+        try {
+            emit(Resource.Success(repo.showDialogRateApp(context)))
+        } catch (e: Exception) {
+            emit(Resource.Failure(e))
+        }
+    }
+
+    fun notShowAppDialogNeverMore(context: Context) {
+        repo.dontShowDialogNeverMore(context)
+    }
+
+    fun showAppDialogLater(context: Context) {
+        repo.showDialogLater(context)
     }
 }
 

@@ -15,6 +15,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.snackbar.Snackbar
 import com.los3molineros.michelinstarrestaurants.R
 import com.los3molineros.michelinstarrestaurants.common.AppConstants.LAT_DEFAULT
 import com.los3molineros.michelinstarrestaurants.common.AppConstants.LNG_DEFAULT
@@ -29,6 +30,7 @@ import com.los3molineros.michelinstarrestaurants.presentation.MapViewModelFactor
 
 class MapsFragment : Fragment(R.layout.fragment_maps) {
     private var locationPermissionGranted = false
+
 
     private val viewModel: MapViewModel by activityViewModels {
         MapViewModelFactory(
@@ -56,10 +58,11 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
                     getLocationPermission()
                     viewModel.latLng.observe(this) { latLng ->
                         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                            latLng, 12f))
+                            latLng, 8f))
                     }
                 }
                 is Resource.Failure -> {
+                    Snackbar.make(requireView(), "Map failed", Snackbar.LENGTH_LONG)
                 }
             }
         }

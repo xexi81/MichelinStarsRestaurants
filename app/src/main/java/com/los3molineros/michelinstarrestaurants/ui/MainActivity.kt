@@ -1,7 +1,9 @@
 package com.los3molineros.michelinstarrestaurants.ui
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
@@ -32,6 +34,21 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        viewModel.showAppDialog(this).observe(this) {
+            when (it) {
+                is Resource.Loading -> {}
+                is Resource.Success -> {
+                    if (it.data) {
+                        showAlertDialogApp()
+                    } else {
+                        viewModel.showAppDialogLater(this)
+                    }
+                }
+                is Resource.Failure -> {}
+            }
+        }
+
         initUI()
     }
 
@@ -43,9 +60,13 @@ class MainActivity : AppCompatActivity() {
     private fun initSubscribers() {
         viewModel.fetchRestaurants().observe(this) {
             when (it) {
-                is Resource.Loading -> {}
-                is Resource.Success -> startActivity(Intent(this, MapActivity::class.java))
+                is Resource.Loading -> { binding.progressBar.visibility = View.VISIBLE}
+                is Resource.Success -> {
+                    binding.progressBar.visibility = View.GONE
+                    startActivity(Intent(this, MapActivity::class.java))
+                }
                 is Resource.Failure -> {
+                    binding.progressBar.visibility = View.GONE
                     Snackbar.make(binding.root, "${it.exception.message}",
                         Snackbar.LENGTH_LONG
                     ).show()
@@ -53,4 +74,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
+    private fun showAlertDialogApp() {
+        AppRatingDialog(this@MainActivity) { optionSelected ->
+            when(optionSelected) {
+                1 -> {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.los3molineros.michelinstarrestaurants")))
+                    viewModel.notShowAppDialogNeverMore(this@MainActivity)
+                }
+                2 -> {
+                    viewModel.showAppDialogLater(this@MainActivity)
+                }
+                3 -> {
+                    viewModel.notShowAppDialogNeverMore(this@MainActivity)
+                }
+            }
+        }
+    }
+
+
+
 }

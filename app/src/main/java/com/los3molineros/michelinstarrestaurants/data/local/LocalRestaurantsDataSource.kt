@@ -19,6 +19,10 @@ class LocalRestaurantsDataSource(private val restaurantDao: RestaurantDao) {
         return restaurantDao.getDistinctStars()
     }
 
+    suspend fun getRestaurantByName(name: String): RestaurantEntity {
+        return restaurantDao.getRestaurantByName(name)
+    }
+
     suspend fun getRestaurantsByStars(rating: String?) = flow {
         emit(Resource.Loading())
 
