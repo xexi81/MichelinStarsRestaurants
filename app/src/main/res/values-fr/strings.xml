@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Restaurants étoilés Michelin</string>
+    <string name="stars">Étoilés</string>
+    <string name="star_1">1 Etoile</string>
+    <string name="star_2">2 Étoilés</string>
+    <string name="star_3">3 Étoilés</string>
+    <string name="star_all">voir tout</string>
+
+    <string name="tittle_dialog_rating">Évaluer ln\'application!</string>
+    <string name="rating_description">Aimez-vous cette  app? \nCela ne prendra pas plus dn\'une minute. \nMerci pour votre aide</string>
+    <string name="yes">Évaluez</string>
+    <string name="not_now">Plus tard</string>
+    <string name="never_more">Non, merci</string>
+</resources>

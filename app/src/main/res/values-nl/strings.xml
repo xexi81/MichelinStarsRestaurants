@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Michelinsterrenrestaurants</string>
+    <string name="stars">Sterren</string>
+    <string name="star_1">1 Ster</string>
+    <string name="star_2">2 Sterren</string>
+    <string name="star_3">3 Sterren</string>
+    <string name="star_all">alles zien</string>
+
+    <string name="tittle_dialog_rating">Beoordeel de app!</string>
+    <string name="rating_description">Je vindt deze app leuk? \nHet duurt niet langer dan een minuut. \nBedankt voor je hulp</string>
+    <string name="yes">Schatten</string>
+    <string name="not_now">Later</string>
+    <string name="never_more">Nee, dank u wel</string>
+</resources>

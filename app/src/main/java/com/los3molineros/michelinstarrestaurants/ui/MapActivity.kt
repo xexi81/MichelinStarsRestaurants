@@ -105,7 +105,7 @@ class MapActivity : AppCompatActivity() {
 
 
     private fun initUI() {
-        viewModel.fetchRestaurantsByStars("3")
+        viewModel.fetchRestaurantsByStars(null)
 
         initFormats()
         initListeners()
